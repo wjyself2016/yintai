@@ -1,11 +1,12 @@
 <template lang="html">
 	<div class="container">
-		<index></index>
+		<Classify></Classify>
 	</div>
 </template>
 
 <script>
 	import Index from './index/index.vue'
+	import Classify from './classify/classify.vue'
 	
 	export default {
 		data() {
@@ -17,7 +18,7 @@
 
 		},
 		components: {
-    		Index:Index,
+    		Classify:Classify,
   		}
 	}
 </script>
@@ -25,7 +26,8 @@
 <style lang="scss">
 	@import "../../styles/app.scss";
 	@import "../../styles/modules/common.scss";
-	.m-shopping{
-		font-size:50px;
+	.container{
+		width:100%;
+		height:100%;
 	}
 </style>
