@@ -1,2 +1,2 @@
 # yintai
-a mobileProject by bue
+a mobileProject by vue
