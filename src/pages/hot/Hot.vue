@@ -1,12 +1,15 @@
 <template lang="html">
 	<div class="m-hot">
-		<tablebar></tablebar>
+		<getbacknav></getbacknav>
 		hot...
+		<tablebar></tablebar>
+		
 	</div>
 </template>
 
 <script>
 	import Tablebar from '../../components/tablebar.vue';
+	import Getbacknav from '../../components/getbacknav.vue';
 	export default {
 		data() {
 			return {
@@ -17,7 +20,11 @@
 
 		},
 		components: {
-    		Tablebar
+    		Tablebar,
+    		Getbacknav
+  		},
+  		created(){
+  			this.$store.commit('navName','抢先');
   		}
 	}
 </script>

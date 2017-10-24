@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+.nav{
+    width:100%;
+    height:.4rem;
+    position:relative;
+    background:white;
+    @include flexbox();
+    z-index: 1001;
+    .left{
+        width:.18rem;
+        height:.23rem;
+        margin:.1rem 0 0 .1rem;
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
+    .center{
+        @include flex();
+        text-align: center;
+        line-height: .4rem;
+        font-size:.16rem;
+    }
+    .right{
+        width:.22rem;
+        margin-right:.1rem;
+        span{
+            display: block;
+            width: .22rem;
+            height: .05rem;
+            margin-top: .18rem;
+            background: url("https://r.ytrss.com/mobile/img/bai-01.png") no-repeat 0px -73px;
+            background-size: 100%;
+            &.active{
+                background: url("https://r.ytrss.com/mobile/img/bai-01.png") no-repeat 0px -78px;
+            }
+        }
+    }
+    .verticalnav{
+        position: absolute;
+        right:0;
+        top:.41rem;
+        ul{
+            padding:.05rem;
+            background:white;
+            li{
+                    padding:.05rem 0;
+                    text-align: center;
+                    color: #666;
+                    border-bottom: 1px solid #ccc;
+                i{
+                    display: inline-block;
+                    width: 25px;
+                    height: 20px;
+                    margin: 5px 5px 5px 0;
+                    vertical-align: top;
+                    background: url("https://r.ytrss.com/mobile/img/bai-01.png") no-repeat 0px 0px;
+                    background-size: 100%;
+                    &.category{
+                        background-position: 0 -21px;
+                    }
+                    &.shopcar{
+                        background-position: 0 -42px;
+                    }
+                    &.mine{
+                        background-position: 0 -63px;
+                    }
+                }
+                b{
+                        display: inline-block;
+                        width: 60px;
+                        height: 20px;
+                        margin: 7px 0 3px;
+                        line-height: 20px;
+                        font-weight: 100;
+                }
+                &:last-child{
+                    border:none;
+                }
+            }
+            
+        }
+    }
+}

@@ -3,15 +3,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    tabIndex: 0,
-    city: ''
+    isShow:false,
+    navName:''
   },
   mutations: {
-    changeIndex(state, payload) {
-      state.tabIndex = payload
+    isShow(state, payload) {
+      state.isShow = payload
     },
-    changeCity(state, payload) {
-      state.city = payload
+    navName(state, payload) {
+      state.navName = payload
     }
   }
 })
