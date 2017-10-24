@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.hello {
+    height: 0.54rem;
+    background: #fff;
+    @include border(1px 0 0 0);
+    ul {
+        height: 100%;
+        @include border(1px 0 0 0);
+        @include flexbox();
+        li {
+            @include flex();
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            b{
+                font-size: 0.14rem;
+                color: #666;
+                font-weight: 100;
+            
+            }
+            i {
+                font-weight: 100;
+                font-size: 0.25rem;
+                color: #666;
+            }
+            &.active b,
+            &.active i {
+                color: $base_color;
+            }
+        }
+    }
+    
+}

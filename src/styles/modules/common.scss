@@ -1,5 +1,10 @@
-#root {
+#app {
   width: 100%;
   height: 100%;
 }
 
+$base_color:  #e5004f;
+@font-face {
+  font-family: 'yofont';
+  src: url('../assets/iconfont/iconfont.woff') format('woff'), url('../assets/iconfont/iconfont.ttf') format('truetype')
+}
