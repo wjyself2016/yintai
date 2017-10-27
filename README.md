@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # yintaipro
 
 > A Vue.js project
@@ -19,3 +20,7 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# yintai
+a mobileProject by vue
+>>>>>>> 13302e259abaaaaf187f99cbf0222cac5f4ed741
