@@ -8,6 +8,7 @@ import store from './vuex/store';
 
 import router from './router/';
 
+import 'mint-ui/lib/style.css';
 
 
 new Vue({
@@ -15,3 +16,4 @@ new Vue({
   router,
   store
 })
+

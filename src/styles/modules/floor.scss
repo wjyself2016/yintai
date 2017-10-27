@@ -1,0 +1,25 @@
+.m-index{
+    
+
+.floor-head{
+        width:100%;
+        overflow: hidden;
+        margin:2px 0 1px 0;
+        img{
+            width:100%;
+        }
+    }
+    .TwoImgAverage{
+        @include flexbox();
+        .ImgAverage{
+            @include flex();
+            @include flexbox();
+            @include flex-direction(column);
+            padding:1px;
+            img{
+                width:100%;
+                
+            }
+        }
+    }
+}

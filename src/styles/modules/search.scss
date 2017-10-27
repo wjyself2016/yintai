@@ -1,0 +1,70 @@
+.m-search{
+    section{
+        >div{
+            width:100%;
+            height:100%;
+            @inlcude flexbox();
+            @inlcude flex-direction(column);
+            .list-div{
+                @include flex();
+                 width:100%;
+             }
+             .no-product{
+                 padding:.5rem 0;
+                 @include border(1px 0 0 0,#999);
+                 margin-top:-0.01rem;
+                 .empty-img{
+                     margin:0 auto .1rem;
+                     width:.9rem;
+                     height:.9rem;
+                     background: url("http://r.ytrss.com/mobile/img/pro-list-empty.png") 0 0 no-repeat;
+                     background-size:100%;
+                }
+                p{
+                    text-align: center;
+                    color:#999;
+                }
+                .alert-div{
+                    position: absolute;
+                    left:10%;
+                    top:36%;
+                    width:80%;
+                    height:1.6rem;
+                    background: #fff;
+                    border-radius:.06rem;
+                    padding:.15rem 0;
+                    margin:0 auto;
+                    p{
+                        text-align: center; 
+                        &:first-child{
+                            color: rgb(51, 51, 51);
+                            font-size:.2rem;
+                            padding:0 .15rem;
+                        }
+                        &:nth-child(2){
+                            font-size:.15rem;
+                            padding:.26rem .15rem;
+                        }
+                        &:last-child{
+                            color: rgb(255, 59, 127);
+                            @include border(1px 0 0 0,#ccc);
+                            font-size:.16rem;
+                            padding:.08rem 0;
+                        }
+                    }
+                    
+                }
+                .cover{
+                    position: fixed;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    background: rgba(0,0,0,0.5);
+                }
+             }
+             
+        }
+    }
+    
+}

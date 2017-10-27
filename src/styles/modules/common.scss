@@ -8,3 +8,22 @@ $base_color:  #e5004f;
   font-family: 'yofont';
   src: url('../assets/iconfont/iconfont.woff') format('woff'), url('../assets/iconfont/iconfont.ttf') format('truetype')
 }
+
+.m-container{
+  width: 100%;
+  height: 100%;
+  @include flexbox();
+  @include flex-direction(column);
+}
+
+@font-face {
+  font-family: 'iconfont';
+  src:url('../assets/iconfont/mine.woff') format('woff'),url('../assets/iconfont/mine.woff') format('truetype');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,15 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
+
+import cart from './modules/cart'
+import * as types from './mutation-types'
+
+
 const store = new Vuex.Store({
   state: {
-    isShow:false,
     navName:''
   },
+  modules:{
+  	cart
+  },
   mutations: {
-    isShow(state, payload) {
-      state.isShow = payload
-    },
     navName(state, payload) {
       state.navName = payload
     }

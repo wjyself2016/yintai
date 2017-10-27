@@ -1,0 +1,161 @@
+.m-classify{
+    width:100%;
+    height:100%;
+    @include flexbox();
+    @include flex-direction(column);
+    background:white;
+    position: relative; 
+    
+    .list{
+        @include flex();
+        width:100%;
+        @include flexbox();
+        overflow: hidden;
+        z-index: 777;
+        
+        .list_left{
+            @include flex(1);
+            height:100%;
+            overflow-x:hidden;
+            overflow-y:scroll;
+            ul{
+                @include flexbox();
+                @include flex-direction(column);
+                li{
+                    width:100%;
+                    height:.55rem;
+                    text-align: center;
+                    line-height: .55rem;
+                    @include border(0 .01rem 0 0);
+                    background:#F5F5F5;
+                    &.active{
+                        background:white;
+                        border:none;
+                        color:red;
+                        @include border(0);
+                    }
+                }
+              
+            }
+            
+        }
+        .list_right{
+            @include flex(3);
+            height:100%;
+            overflow-x:hidden;
+            overflow-y:scroll;
+            .item_box{
+                width:100%;
+                div{
+                    width:100%;
+                    padding:0 .1rem;
+                    .title{
+                        text-align: center;
+                        margin-top: .15rem;
+                        height: .35rem;
+                        line-height: .35rem;
+                        width: 100%;
+                        background: url("https://r.ytrss.com/mobile/img/category-area-title@3x.png") no-repeat;
+                        background-size: 100%;
+                        background-position: 50%;
+                    }
+                }
+                .item_box_up{
+                    .body{
+                        width:100%;
+                        padding:0;
+                        @include flexbox();
+                        @include flex-wrap(wrap);
+                        dl{
+                            width:33.333%;
+                            dd{
+                                width:100%;
+                                padding:.1rem;
+                                img{
+                                    width:100%
+                                }
+                            }
+                            dt{
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .item_box_middle{
+                    .body{
+                        width:100%;
+                        padding:0;
+                        ul{
+                            @include flexbox();
+                            @include flex-wrap(wrap);
+                            li{
+                                width:33.333%;
+                                padding:.1rem .03rem;
+                                img{
+                                    width:100%;
+                                    border:.02rem solid #F5F5F5;
+                                }
+                            }
+                        }
+                    }
+                }
+                .item_box_down{
+                    .body{
+                        width:100%;
+                        padding:0 0 .15rem 0;
+                        ul{
+                            @include flexbox();
+                            @include flex-wrap(wrap);
+                            li{
+                                width:33.333%;
+                                padding:.02rem;
+                                height:.55rem;
+                                line-height: .55rem;
+                                text-align: center;
+                                color:#666666;
+                                @include ellipsis();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .search{
+        width:100%;
+        height:.64rem;
+        padding:.1rem;
+        @include border(1px 0 1px 0);
+        z-index: 888;
+        
+        .s_box{
+            width:100%;
+            height:100%;
+            border:1px solid #E2E2E2;
+            border-radius: 5px;
+            padding:6px;
+            @include flexbox();
+            .s_txt{
+                height:100%;
+                border:none;
+                @include flex();
+            }
+            .s_btn{
+                width:41px;
+                height:100%;
+                padding-left:6px;
+                @include border(0 0 0 1px);
+                i{
+                    display: block;
+                    width:100%;
+                    height:100%;
+                    padding:5px 8px;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+        }
+    }
+}

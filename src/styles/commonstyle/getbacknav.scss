@@ -83,3 +83,13 @@
         }
     }
 }
+
+.cover{
+    position: absolute;
+    left: 0;
+    height: 0;
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}

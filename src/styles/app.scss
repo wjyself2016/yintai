@@ -4,4 +4,16 @@
 @import './modules/common.scss';
 @import './commonstyle/tablebar.scss';
 @import './commonstyle/getbacknav.scss';
-
+/****首页样式*****/
+@import "./modules/index.scss";
+@import "./modules/position.scss";
+@import "./modules/product.scss";
+@import "./modules/floor.scss";
+@import "./modules/mine.scss";
+@import "./modules/goodsdetail.scss";
+@import "./modules/signin.scss";
+@import "./modules/signup.scss";
+@import "./modules/forgetpass.scss";
+@import "./modules/hot.scss";
+@import "./modules/classify.scss";
+@import "./modules/shopping.scss";

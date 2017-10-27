@@ -1,0 +1,228 @@
+.m-container {
+  .m-mine {
+    @include flex();
+    @include flex-direction(column);
+    width: 100%;
+    overflow-y: scroll;
+
+    header {
+      background: #fff;
+      color: #000;
+      font-size: 0.16rem;
+    }
+
+    .yt-user-info {
+      position: relative;
+      height: 1.2rem;
+      @include flex();
+      width: 100%;
+      @include flex-direction(column);
+      background: #ff7ba9;
+
+      .yt-user-img {
+        height: 0.94rem;
+        width: 100%;
+        text-align: center;
+        padding: 0.1rem 0 0.08rem;
+
+        img {
+          width: 0.72rem;
+        }
+      }
+
+      .yt-user-name {
+        text-align: center;
+        font-size: 0.14rem;
+        color: #fff;
+      }
+
+      .yt-user-level {
+        position: absolute;
+        right: 0.1rem;
+        top: 0.1rem;
+        font-size: 0.12rem;
+        color: #333;
+      }
+    }
+
+    .yt-user-order {
+      width: 100%;
+      height: 0.78rem;
+      background: #fff;
+      padding: 0.05rem 0;
+
+      > ul {
+        @include flexbox();
+        width: 100%;
+
+        li {
+          @include flex();
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(center);
+          @include border(0 1px 0 0 ,#999);
+
+          span:first-child {
+            font-size: 0.3rem;
+            color: #999;
+          }
+
+          span:last-child {
+            color: #333;
+            font-size: 0.14rem;
+          }
+        }
+
+        li:last-child {
+          @include border(0);
+        }
+      }
+    }
+
+    .yt-user-money {
+      width: 100%;
+      height: 0.71rem;
+      padding: 0.1rem 0 0;
+
+      > ul {
+        @include flexbox();
+        width: 100%;
+        height: 0.61rem;
+        background: #fff;
+        padding: 0.1rem 0;
+
+        li {
+          @include flex();
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(center);
+          @include border(0 1px 0 0 ,#999);
+
+          & span:last-child {
+            color: #666;
+          }
+        }
+
+        li:last-child {
+          @include border(0);
+        }
+      }
+    }
+
+    .yt-user-other {
+      width: 100%;
+      padding-bottom: 0.1rem;
+      @include border(1px 0 0 0,#999);
+
+      > ul {
+        @include flexbox();
+        @include flex-wrap(wrap);
+        width: 100%;
+        background: #fff;
+
+        li {
+          width: 50%;
+          height: 0.6rem;
+          @include flexbox();
+          @include justify-content(center);
+          @include align-items(center);
+
+          .yt-card-icon,
+          .yt-other-icon {
+            display: inline-block;
+            width: 40%;
+            height: 0.36rem;
+            margin-right: 0.05rem;
+          }
+
+          .yt-other-icon {
+            text-align: right;
+            line-height: 0.36rem;
+            font-size: 0.22rem;
+          }
+
+          > div {
+            @include flex();
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(left);
+            padding-left: 0.05rem;
+            height: 100%;
+
+            span:first-child {
+              font-size: 0.12rem;
+              color: #666;
+            }
+          }
+        }
+
+        li:nth-child(odd) {
+          @include border(0 1px 1px 0 ,#999);
+        }
+
+        li:nth-child(even) {
+          @include border(0 0 1px 0,#999);
+        }
+
+        .yt-card {
+          .yt-card-icon {
+            background: url("../assets/images/user-center-img.png") center right no-repeat;
+            background-size: 0.25rem 0.19rem;
+          }
+        }
+
+        .yt-youhui {
+          .yt-card-icon {
+            background: url("../assets/images/user-center-img-1.png") center right no-repeat;
+            background-size: 0.25rem 0.19rem;
+          }
+        }
+
+        .yt-huzhao {
+          .yt-card-icon {
+            background: url("../assets/images/user-center-img-2.png") center right no-repeat;
+            background-size: 0.25rem 0.19rem;
+          }
+        }
+
+        .yt-phone {
+          .yt-card-icon {
+            background: url("../assets/images/user-center-img-4.png") center right no-repeat;
+            background-size: 0.25rem 0.19rem;
+          }
+        }
+      }
+    }
+
+    .yt-user-common {
+      margin-bottom: 0.1rem;
+      @include border(1px 0 1px 0,#999);
+
+      .mint-cell-text {
+        font-size: 0.14rem;
+      }
+
+      .pink {
+        color: #e5004f;
+      }
+    }
+
+    .yt-user-logout {
+      width: 100%;
+      .yt-user-logoutbtn {
+        width: 100%;
+        height: 0.48rem;
+        padding: 0.1rem 0.15rem;
+        text-align: center;
+        line-height: 0.28rem;
+        @include border(1px 0 1px 0,#999);
+        background: #fff;
+        font-size: 0.16rem;
+        color: #e5004f;
+      }
+    }
+  }
+}

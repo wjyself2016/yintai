@@ -1,0 +1,219 @@
+    .m-hot{
+        @include flexbox();
+        @include flex-direction(column);
+        width:100%;
+        height:100%;
+        header{
+            height:0.4rem;
+            width:100%;
+            background: #333;
+        }
+        section{
+            @include flex();
+            width:100%;
+            overflow-y: scroll;
+        }
+    }
+    
+/********************toplist***********************/
+    .m-hot{
+        section{
+            background: #fff;
+             >div{
+                width:100%;
+                @include flexbox();
+                @include flex-direction(column);
+             .template-ul{
+                 @include flexbox();
+                 height:0.36rem;
+                 @include border(1px 0 1px 0,#ccc);
+                 width:100%;
+                 li{
+                     @include flex();
+                     text-align: center;
+                     @include align-items(center);
+                     @include justify-content(center);
+                     line-height:.28rem;
+                     &.active{
+                        @include border(0 0 4px 0,#e5004f)
+                       }
+                       padding:0.04rem 0;
+                     b{
+                         display: inline-block;
+                         width:100%;
+                         font-size:.14rem;
+                         font-weight: 100;
+                         color:#666;
+                         @include border(0 1px 0 0);
+                     }
+                    }
+                }
+            }
+         }
+    }
+    
+/************************list*************************/
+.hot-inner{
+    ul{
+        margin-top:-.01rem;
+        @include border(1px 0 0 0,#ccc);
+        @include flexbox();
+        @include flex-direction(column);
+        width:100%;
+        height:100%;
+        .hot-select-one{
+            margin:12px 0 0 0;
+            width:100%;
+            @include flexbox();
+             @include flex-direction(column);
+            position: relative;
+            @include border(0 0 1px 0,#ccc);
+             
+            a{
+                display: block;
+                width: 100%;
+                img{
+                     width: 100%;
+                }
+            }
+            .pos-img{
+                position: absolute;
+                width:.74rem;
+                height:.20rem;
+                top:.06rem;
+                background: rgba(229,0,79,0.8);
+                color:#fff;
+                border-radius: 0 .1rem .1rem 0;
+                padding-left:.08rem;
+            }
+            p{
+                padding-right:.1rem;
+                text-align: right;
+                height:.3rem;
+                @include flexbox();
+                span:first-child{
+                    @include flex();
+                    text-align: left;
+                    padding-left:.05rem;
+                }
+                span{
+                    
+                    line-height: .3rem;
+                }
+            }
+        }
+    }
+}
+/************************search*************************/
+.hot-inner{
+    ul{
+       .hot-select-two {
+            width:100%;
+            
+            position: relative;
+            @include border(0 0 2px 0,#d9d9d9,dashed);
+            dl{
+                padding:.1rem;
+                @include flexbox();
+                dd{
+                    border: 1px solid #ccc
+                }
+                dt{
+                    padding-left:.1rem;
+                    @include flex();
+                    @include align-items(right);
+                    p:first-child{
+                        height:.44rem;
+                        text-align: left;
+                        font-size:.16rem;
+                        line-height: .22rem;
+                    }
+                    p{
+                        @include flexbox();
+                        text-align: right;
+                        .shichang{
+                            @include flex();
+                            font-size:.16rem;
+                            color:#e5004f;
+                            text-decoration:none;
+                            text-align: left;
+                        }
+                    }
+                     .line{
+                            text-decoration: line-through;
+                            font-size:.14rem;
+                            color:#666;
+                        }
+                    div{
+                        span{
+                            display: inline-block;
+                            background: #FF3C7E;
+                            padding:.03rem .08rem;
+                            font-size:.12rem;
+                            color:#fff;
+                            border-radius:.05rem;
+                        }
+                    }
+                }
+            }
+       }
+    }
+}
+            .allday{
+                line-height:.24rem;
+                color:#999;
+                background:url('http://r.ytrss.com/mobile/img/ctd-icon-small.png') .03rem center no-repeat;
+                padding-left:.24rem;
+                b{
+                    font-weight: normal;
+                    color:#ff3b7f;
+                }
+            }
+            
+
+/************************footer-bar*************************/
+.m-hot{
+    .footer-bar{
+        padding-top:.1rem;
+        background: #ececec;
+        @include flexbox();
+        @include flex-direction(column);
+        ul{
+            padding:0 .15rem;
+            @include flexbox();
+            li{
+                padding:.05rem 0;
+                @include flex();
+                text-align: center;
+                a{
+                    color:#999;
+                }
+            }
+        }
+        .login{
+            padding:.05rem .15rem .1rem;
+            @include flexbox();
+            p{
+                font-size:.16rem;
+                a{
+                    color:#666;
+                    margin:0 .05rem;
+                    font-size:.14rem;
+                }
+            }
+            
+            a{
+                color:#666;
+                @include flex();
+                text-align: right;
+            }
+            
+        }
+        .tel{
+            color:#999;
+            @include border(1px 0 0 0,#ddd)
+            padding:.12rem 0;
+            text-align: center;
+        }
+    }
+}

@@ -1,26 +1,30 @@
 <template lang="html">
 	<div class="m-hot">
-		<getbacknav></getbacknav>
-		hot...
-		<tablebar></tablebar>
-		
+		<header>
+			<getbacknav></getbacknav>
+		</header>
+		<section>
+			<!--<top :topli="toplist"></top>-->
+			<position :toplist="toplist">
+			</position>	
+		</section>
 	</div>
 </template>
 
 <script>
-	import Tablebar from '../../components/tablebar.vue';
+	import position from './position.vue'
 	import Getbacknav from '../../components/getbacknav.vue';
 	export default {
 		data() {
 			return {
-				
+				toplist:["推荐","最新","特卖爆推","倒计时","预告"]
 			}
 		},
 		methods: {
 
 		},
 		components: {
-    		Tablebar,
+    		position,
     		Getbacknav
   		},
   		created(){

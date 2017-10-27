@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.m-index {
+    height: 100%;
+    @include flexbox();
+    @include flex-direction(column);
+    header {
+        height: .55rem;
+        background: #fff;
+        line-height: .43rem;
+        font-size:.18rem;
+        padding:6px 0;
+        @include border(0 0 1px 0);
+        @include flexbox();
+        width:100%;
+        .logo{
+           overflow: hidden;
+           width:.75rem;
+           img{
+               width:100%;
+           }
+        }
+        .search{
+            @include flex();
+            @include flexbox();
+            width:100%;
+            @include border(1px solid #d2d2d2);
+            @include border-radius(5px);
+            padding:.06rem;
+            input{
+                @include flex();
+                height:100%;
+                border:none;
+                font-size:.14rem;
+                color:#ccc;
+            }
+            span{
+                @include border(0 0 0 1px);
+                display:block;
+                @include flexbox();
+                width:.47rem;
+                text-align: center;
+                i{
+                    @include flex();
+                    @include justify-content(center);
+                    @include align-items(center);
+                    line-height: .30rem;
+                    font-size:0.2rem;
+                }
+            }
+        }
+        .my{
+            width:.50rem;
+            font-size:.35rem;
+            text-align: center;
+            align-items:center;
+            color:#999;
+        }
+    }
+    section {
+        background: #f1f1f1;
+        @include flex();
+        height:100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    footer {
+        height: 0.54rem;
+    }
+}

@@ -1,0 +1,128 @@
+.m-index {
+.shuf-list{
+    height:1.52rem;
+    overflow: hidden;
+    img{
+        width:100%;
+        min-height:1.1rem;
+    }
+}
+.nav-list{
+    height:.75rem;
+    background: #fff;
+    margin-bottom:4px;
+    ul{
+        @include flexbox();
+       
+        li{
+            @include flex();
+            @include flexbox();
+            width:100%;
+            @include flex-direction(column);
+            @include justify-content(center);
+            @include align-items(center);
+            img{
+                @include flex();
+                width:100%;
+            }
+            p{
+                @include flex();
+                width:100%;
+                text-align: center;
+                margin-top:8px;
+            }
+        }
+    }
+}
+.recommend{
+    background: #fff;
+    position: relative;
+    height:.3rem;
+    color:#666666;
+    margin-bottom:2px;
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+    padding:0 15px;
+    &::before{
+        content:" ";
+        display:block;
+        width:0;
+        height:0;
+        position:absolute;
+        top:0;
+        left:0;
+        border-top:15px solid $base_color;
+        border-left:8px solid transparent;
+        border-left:8px solid transparent;
+        transform: rotateY(180deg);
+    }
+}
+.loading{
+    @include flexbox();
+    @include justify-content(center);
+}
+.pro-list{
+    background: #fff;
+    width:100%;
+    overflow-x: scroll;
+    @include flexbox();
+    padding:5px 3px;
+    //@include justify-content(center);
+    
+    .inlist{
+        @include flexbox();
+        @include justify-content(flex-start);
+       // width:7.8rem;
+       li{
+           @include flexbox();
+       }
+        dl{
+            width:.88rem;
+            position:relative;
+            padding:0 2px 0 0;
+            dt{
+                @include border(0.5px,#ccc,solid); 
+                img{
+                    width:100%;
+                }
+            }
+            dd{
+                p{
+                    @include ellipsis(.86rem,2);
+                }
+                span{
+                    color:$base_color;
+                    font-weight: 600;
+                }
+            }
+        }
+        .pro-prom{
+            background:#ff3b7f;
+            padding:4px 8px;
+            position:absolute;
+            top:-1px;
+            left:-1px;
+            color:#fff;
+            font-size:.12rem;
+        }
+    }
+}
+.message{
+    height:.3rem;
+    background: #f1f1f1;
+    @include flexbox();
+    @include align-items(center);
+    padding:0 20%;
+    .anno{
+        @include flex();
+        height: .25rem;
+        background:#fff;
+        @include border-radius(15px);
+        color:$base_color;
+        font-size:.10rem;
+        line-height:.3rem;
+        text-align: center;
+    }
+}
+}

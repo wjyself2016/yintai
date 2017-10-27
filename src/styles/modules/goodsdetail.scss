@@ -1,0 +1,243 @@
+.m-detail {
+  @include flexbox();
+  @include flex-direction(column);
+  width: 100%;
+  height: 100%;
+
+  section {
+    @include flex();
+    width: 100%;
+    overflow-y: scroll;
+
+    header {
+      background: #fff;
+      color: #000;
+      @include border(0 0 1px 0,#ccc);
+      font-size: 0.16rem;
+    }
+
+    .yt-dl-swipe {
+      width: 100%;
+      height: 3.6rem;
+      max-width: 6.4rem;
+      padding: 0.2rem 0;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+
+      .yt-swipe-box {
+        @include flexbox();
+        @include justify-content(center);
+        width: 100%;
+        height: 100%;
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .mint-swipe-indicators {
+        .is-active {
+          background-color: #aaa;
+        }
+      }
+
+      .yt-dl-miao {
+        position: absolute;
+        left: 0.1rem;
+        top: 0;
+        width: 0.35rem;
+        height: 0.35rem;
+        background: url("../assets/images/miao-cat-max.png") no-repeat center;
+        background-size: 0.35rem 0.35rem;
+      }
+    }
+
+    .yt-dl-info {
+      width: 100%;
+      padding: 0.1rem 0.1rem 0;
+      background: #fff;
+
+      .yt-dl-tle {
+        height: 0.45rem;
+        width: 100%;
+        @include flexbox();
+        @include justify-content(center);
+
+        .yt-dl-name {
+          width: 83%;
+          height: 100%;
+          @include border(0 1px 0 0 ,#999);
+          font-size: 0.17rem;
+        }
+
+        .yt-dl-like {
+          @include flex();
+          height: 100%;
+          @include flexbox();
+          @include justify-content();
+          @include align-items();
+
+          > span {
+            width: 0.35rem;
+            height: 0.3rem;
+            background: url("../assets/images/bai-08.png") no-repeat 0 0;
+            background-size: 0.35rem 0.6rem;
+          }
+        }
+      }
+
+      .yt-dl-pirce {
+        width: 100%;
+        height: 0.42rem;
+        padding: 0.08rem;
+        @include flexbox();
+        @include align-items(center);
+
+        .yt-dl-currentprice {
+          color: #e5004f;
+
+          > span {
+            font-size: 0.24rem;
+            font-weight: 500;
+          }
+        }
+
+        .yt-dl-marketprice {
+          padding-left: 0.08rem;
+          text-decoration: line-through;
+          color: #999;
+        }
+
+        .yt-dl-itemcode {
+          width: 50%;
+          text-align: right;
+          color: #999;
+        }
+      }
+    }
+
+    .yt-dl-classify {
+      padding-top: 0.1rem;
+      width: 100%;
+
+      > ul {
+        @include flexbox();
+        width: 100%;
+        @include flex-direction(column);
+        padding: 0 0.1rem;
+        background: #fff;
+
+        li {
+          width: 100%;
+          @include border(0 0 1px 0 ,#ccc,dashed);
+          line-height: 0.4rem;
+
+          .yt-dl-classify-tle {
+            display: block;
+            color: #999;
+          }
+
+          .yt-dl-options {
+            width: 100%;
+            @include flexbox();
+            padding-bottom: 0.1rem;
+          }
+
+          .yt-dl-option {
+            margin: 0 0.05rem;
+            width: 0.4rem;
+            line-height: 0.3rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            vertical-align: middle;
+            background-color: #fff;
+            color: #666;
+            @include border(1px,#333,solid,.05rem);
+          }
+
+          .opnum-size {
+            width: 0.3rem;
+          }
+
+          .active {
+            @include border(1px,#e5004f,solid,.05rem);
+            color: #ff6d9d;
+          }
+
+          .yt-dl-opnum {
+            display: inline-block;
+
+            > span {
+              display: inline-block;
+              font-size: 0.2rem;
+            }
+          }
+
+          .yt-dl-stocktips {
+            margin-left: 10px;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            color: #e5004f;
+          }
+        }
+
+        li:first-child {
+          .yt-dl-classify-tle {
+            display: inline-block;
+          }
+        }
+
+        > li:last-child {
+          @include border(0);
+        }
+
+        .yt-dl-checkselected {
+          height: 0.4rem;
+          text-align: left;
+        }
+
+        .yt-dl-color {}
+      }
+    }
+
+    .yt-dl-brand {
+      padding-top: 0.1rem;
+      height: 0.4rem;
+    }
+  }
+
+  .yt-dl-bar {
+    height: 0.42rem;
+    width: 100%;
+
+    > ul {
+      @include flexbox();
+      height: 100%;
+
+      li:first-child {
+        width: 0.55rem;
+        background: #fff;
+        @include flexbox();
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+      }
+
+      li:nth-child(2), li:nth-child(3){
+        @include flex();
+        height: 100%;
+        text-align: center;
+        line-height: .42rem;
+        color: #fff;
+        background: #e5004f;
+      }
+      li:nth-child(3){
+        background: #FF7039;
+      }
+    }
+  }
+}

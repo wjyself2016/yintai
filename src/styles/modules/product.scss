@@ -1,0 +1,51 @@
+.m-index{
+    
+
+.list{
+    .loading{
+         @include flexbox();
+         @include justify-content(center);
+    }
+    .pro-show{
+        padding:0 2px;
+        @include flexbox();
+        @include flex-direction(column);
+        li{
+           @include flexbox();
+        }
+        dl{
+            @include flex();
+            width:50%;
+            padding:0 2px 2px 2px;
+            dt{
+                background:#fff;
+                width:100%;
+                img{
+                    width:100%;
+                }
+            }
+            dd{
+                background:#fff;
+               .pro-name{
+                    @include ellipsis(100%,2);
+                }
+                .pro-price{
+                    padding-left:20px;
+                    //background: url(/api/r.ytrss.com/mobile/img/phone-enjoy.png) 5px 3px  no-repeat;
+                    span{
+                        font-size:.16rem;
+                        font-weight:600;
+                        color:$base-color;
+                    }
+                    b{
+                        text-decoration:line-through;
+                        font-size:.12rem;
+                    }
+                }
+                
+            }
+        }
+    }
+
+}
+}
