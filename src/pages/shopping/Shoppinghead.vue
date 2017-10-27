@@ -7,10 +7,6 @@
 			<i></i>
 		</router-link>
 		<div class="center">{{navName}}</div>
-		<div v-if="!isEmpty" class="icon3" @click="changeOperate">
-			<span v-if="!isOperate">编辑</span>
-			<span v-if="isOperate">完成</span>
-		</div>
 	</div>
 </template>
 
@@ -18,22 +14,12 @@
 	export default {
 		data() {
 			return {
-				navName:this.$store.state.navName,
-				isOperate:false
+				navName:this.$store.state.navName
 			}
 		},
 		methods: {
 			goback(){
 				window.history.back();
-			},
-			changeOperate(){
-				this.isOperate = !this.isOperate;
-			}
-		},
-		props: {
-			isEmpty:{
-				type:Boolean,
-				required:true
 			}
 		}
 	}

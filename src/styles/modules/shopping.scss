@@ -31,14 +31,6 @@
             left: .4rem;
             overflow: hidden;
         }
-        .icon3{
-            position: absolute;
-            right: 10px;
-            top: 0;
-            height: 40px;
-            line-height: 40px;
-            color: #000;
-        }
         .center{
             width: 2rem;
             text-align: center;
@@ -60,193 +52,14 @@
             img{
                 width:1.1rem;
                 margin: 0 auto;
-                padding:.8rem 0 .25rem 0;
+                padding:.8rem 0 .3rem 0;
             }
             p{
                 text-align: center;
                 color: #666;
                 line-height: 1.6em;
             }
-            .empty_btn{
-                width:2rem;
-                height:.45rem;
-                @include border(1px ,#e5004f,solid,5px);
-                margin:0 auto;
-                line-height: .45rem;
-                text-align: center;
-                color: #e5004f;
-                margin-top:.3rem;
-            }
-        }
-        .has_product{
-            height:100%;
-            padding-top:.15rem;
-        }
-        .shopping_list{
-            width:100%;
-            height:100%;
-            @include flexbox();
-            @include flex-direction(column);
-            
-            .scroll_box{
-                @include flex();
-                width:100%;
-                overflow-y:scroll;
-            }
-            
-            .clc{
-                height:.55rem;
-                background:white;
-                @include border(1px 0 0 0);
-                @include flexbox();
-                .clc_left{
-                    width:.45rem;
-                    height:.45rem;
-                    margin-top:.06rem;
-                    padding-top:.02rem;
-                    @include border(0 1px 0 0);
-                    span{
-                       margin-left: .13rem;
-                    }
-                    p{
-                        text-align: center;
-                        line-height: .2rem;
-                    }
-                }
-                .clc_middle{
-                    @include flex();
-                    margin-top:.06rem;
-                    padding-left:.1rem;
-                    .word1{
-                        font-size:14px;
-                        line-height: .24rem;
-                        b{
-                            font-weight: 700;
-                            color: #e5004f;
-                        }
-                        i{
-                            font-weight: 700;
-                            color: #e5004f;
-                        }
-                    }
-                    .word2{
-                        line-height: .2rem;
-                    }
-                }
-                .clc_right{
-                    width:.9rem;
-                    height:100%;
-                    color: #fff;
-                    font-size: 18px;
-                    line-height: 54px;
-                    text-align: center;
-                    background-color: #e5004f;
-                }
-                
-            }
-            
-            .module{
-                background:white;
-                border-top:1px solid #D2D2D2;
-                margin-bottom:.15rem;
-                .head{
-                    height:.45rem;
-                    padding:.1rem;
-                    span{
-                        margin-right: .05rem;
-                        padding: .05rem .08rem;
-                        color: #fff;
-                        vertical-align: middle;
-                        border-radius: 3px;
-                        background-color: #ff3b7f;
-                    }
-                }
-                .body{
-                    ul{
-                        width:100%;
-                        height:100%;
-                        li{
-                            height:1rem;
-                            width:100%;
-                            padding:.08rem;
-                            @include flexbox();
-                            border-bottom:1px solid #D2D2D2;
-                            .left{
-                                width:.25rem;
-                                height:100%;
-                                padding-top:.3rem;
-                            }
-                            .left_img{
-                                    width: .62rem;
-                                    height: .82rem;
-                                    background-color: #eee;
-                                    border: 1px solid #d2d2d2;
-                                    img{
-                                       width:.6rem;
-                                       height:.8rem; 
-                                    }
-                            }
-                            .right{
-                                @include flex();
-                                width:100%;
-                                height:100%;
-                                padding-left:.08rem;
-                                position: relative;
-                                .title{
-                                    color: #333;
-                                    font-weight: 500;
-                                    height:.40rem;
-                                    line-height:.20rem;
-                                    font-size:12px;
-                                    overflow: hidden;
-                                    @include wrap();
-                                }
-                                .description{
-                                    height:.22rem;
-                                    line-height: .22rem;
-                                    color:#666;
-                                    font-size:14px;
-                                    b{
-                                        font-weight: 100;
-                                        font-size: 12px;
-                                    }
-                                }
-                                .money{
-                                    height:.22rem;
-                                    width:100%;
-                                    line-height: .22rem;
-                                    position: absolute;
-                                    bottom:0;
-                                    
-                                    
-                                    .price{
-                                        font-size:16px;
-                                    }
-                                    .number{
-                                        position: absolute;
-                                        right:.08rem;
-                                        bottom:0;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
-}
-
-
-.checkbtn{
-    span{
-        display: block;
-        width:.1rem;
-        padding: .03rem;
-        width: .18rem;
-        height: .18rem;
-        border: 1px solid #d2d2d2;
-        border-radius: 100%;
-        background-clip: content-box;
-    }
+    
 }

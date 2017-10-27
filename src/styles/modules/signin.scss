@@ -18,13 +18,13 @@
 
   section {
     background: #fff;
-    @include flex();
+    // @include flex();
     width: 100%;
     overflow: hidden;
-
+    height: 70%;
     .logintab {
       width: 100%;
-
+      @include border(1px 0 0 0,#ccc);
       ul {
         @include flexbox();
         @include flex-direction();
@@ -135,11 +135,10 @@
       }
 
       .ythz-desc {
-        padding: 0.3rem 0.1rem 0;
+        padding: 0.1rem 0.1rem 0;
         line-height: 0.16rem;
         font-size: 0.12rem;
         color: #666;
-
         span {
           color: #000;
         }
@@ -148,6 +147,7 @@
   }
 
   .login-footer {
+    @include flex();
     width: 100%;
     background: #f3f3f3;
     height: 25%;

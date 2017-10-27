@@ -24,7 +24,7 @@
       overflow: hidden;
       background: #fff;
       position: relative;
-
+      @include border(1px 0 0 0,#ccc);
       .yt-swipe-box {
         @include flexbox();
         @include justify-content(center);
@@ -69,6 +69,7 @@
           height: 100%;
           @include border(0 1px 0 0 ,#999);
           font-size: 0.17rem;
+          @include ellipsis(83%,2);
         }
 
         .yt-dl-like {
@@ -84,19 +85,23 @@
             background: url("../assets/images/bai-08.png") no-repeat 0 0;
             background-size: 0.35rem 0.6rem;
           }
+          .liked{
+            background-position:  0 bottom;
+          }
         }
       }
 
       .yt-dl-pirce {
         width: 100%;
-        height: 0.42rem;
+        height: auto;
         padding: 0.08rem;
         @include flexbox();
         @include align-items(center);
+        @include flex-wrap(wrap);
+        // @include flex-direction(row-reverse);
 
         .yt-dl-currentprice {
           color: #e5004f;
-
           > span {
             font-size: 0.24rem;
             font-weight: 500;
@@ -107,12 +112,13 @@
           padding-left: 0.08rem;
           text-decoration: line-through;
           color: #999;
+          width:30%;
         }
 
         .yt-dl-itemcode {
           width: 50%;
-          text-align: right;
           color: #999;
+          font-size: .12rem;
         }
       }
     }
@@ -142,11 +148,12 @@
             width: 100%;
             @include flexbox();
             padding-bottom: 0.1rem;
+            @include flex-wrap(wrap);
           }
 
           .yt-dl-option {
             margin: 0 0.05rem;
-            width: 0.4rem;
+            width: 0.5rem;
             line-height: 0.3rem;
             white-space: nowrap;
             overflow: hidden;
@@ -156,6 +163,7 @@
             background-color: #fff;
             color: #666;
             @include border(1px,#333,solid,.05rem);
+            margin-bottom: .05rem;
           }
 
           .opnum-size {
@@ -206,7 +214,111 @@
 
     .yt-dl-brand {
       padding-top: 0.1rem;
-      height: 0.4rem;
+      .yt-brand-img{
+        height: .3rem;
+      }
+
+    }
+    .yt-dl-moretitle{
+      padding-top: .1rem;
+      width: 100%;
+      height: .5rem;
+      .title-text{
+        background: #fff;
+        display:inline-block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: .4rem;
+        color: #666;
+      }
+    }
+
+    .yt-dl-desc{
+      width: 100%;
+      padding-top:.1rem;
+      >ul{
+        width: 100%;
+        @include flexbox();
+        @include flex-direction(column);
+        background-color: #fff;
+        li{
+          .yt-desc-title{
+            margin: .1rem 0;
+            height: .24rem;
+            background: url(../assets/images/p-long.gif) 0 -16px no-repeat;
+            .yt-zh-title{
+              padding-left: .1rem;
+              color: #333;
+            }
+            .yt-en-title{
+              padding-left: .06rem;
+              color: #c9c9c9;
+            }
+          }
+          .yp-argu-det{
+            @include flexbox();
+            @include flex-direction(column);
+            >span{
+              width: 100%;
+              min-height: .28rem;
+              line-height: .28rem;
+              padding: 0 .1rem 0 .15rem;
+              text-align: left !important;
+              color: #666;
+              font-size: .12rem;
+            }
+            span:nth-child(odd){
+              background-color: #f9f9f9;
+            }
+          }
+          >img{
+            width: 100%;
+          }
+          >p{
+            padding: .1rem .05rem .1rem;
+            font-size: .12rem;
+            color: #666;
+          }
+          .yt-dl-story{
+            width: 100%;
+            @include flexbox();
+            @include flex-direction(column);
+            padding: 0 .18rem;
+            padding-bottom: .6rem;
+            .yt-dl-story-brandimg{
+              width: 100%;
+              height: 1.25rem;
+              @include flexbox();
+              @include justify-content();
+              @include align-items();
+              padding: .1rem 0 .4rem 0;
+              img{
+                width: 1.2rem
+              }
+            }
+            .brand-cn-name{
+              width: 100%;
+              height: .64rem;
+              padding: .2rem 0;
+              line-height: .24rem;
+              font-size: .2rem;
+              @include border(0 0 1px 0,#cecece);
+            }
+            >p{
+              padding: .1rem 0;
+              font-size: .14rem;
+              color: #666;
+            }
+            >img{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .m-hot{
+      height: auto;
     }
   }
 
@@ -225,6 +337,12 @@
         @include flex-direction(column);
         @include justify-content(center);
         @include align-items(center);
+        .yt-cart-icon{
+          color: #ff6d9d;
+          font-size: .2rem;
+          height: .2rem;
+          line-height: .2rem;
+        }
       }
 
       li:nth-child(2), li:nth-child(3){

@@ -1,16 +1,16 @@
 <template lang="html">
   <div class="loginbyhu">
-    <form class="huform" action="/api/loginbyhz" method="post">
+    <form class="huform" method="post" action="/api/loginbyhz">
       <div class="phonenum-box">
         <img src="https://h5.yintai.com/m/images/ueser-img-75da284743.png" alt="">
-        <input type="text" name="phonenum" value="" placeholder="请输入银泰护照号(手机号)">
+        <input type="text" name="phonenum" value="" placeholder="请输入银泰护照号(手机号)" v-model="phonenum">
       </div>
       <div class="password-box">
         <img src="https://h5.yintai.com/m/images/pass-img-c8ba68915f.png" alt="">
-        <input type="password" name="password" value="" placeholder="请输入密码">
+        <input type="password" name="password" value="" placeholder="请输入密码" v-model="password">
       </div>
       <div class="loginbtn-box">
-        <input type="submit" name="" value="登录">
+        <input type="button" name="" value="登录" @click="toLogin()">
       </div>
     </form>
     <div class="findpwd-reg">
@@ -30,21 +30,40 @@
 <script>
 // import '../../../media/images/ueser-img.png'
 // import '../../../media/images/pass-img.png'
-import {Indicator} from 'mint-ui'
-export default{
-  data(){
+import { Indicator } from "mint-ui";
+import axiosUtil from "../../utils/axios.util.js";
+import MessageBox from "../../components/MessageBox";
+export default {
+  data() {
     return {
-
-    }
+      phonenum: "",
+      password: "",
+      loginstatus: ""
+    };
   },
-  beforemount(){
+  beforemount() {
     Indicator.open({
-      text: '加载中...',
-      spinnerType: 'triple-bounce'
-    })
+      text: "加载中...",
+      spinnerType: "triple-bounce"
+    });
   },
   mounted() {
-    Indicator.close()
+    Indicator.close();
+  },
+  methods: {
+    toLogin() {
+      axiosUtil.login(this.phonenum, this.password, "/api/loginbyhz", this)
+    }
+  },
+  watch: {
+    loginstatus(val) {
+      console.log(val)
+      if (val === 0) {
+        MessageBox.alert("用户名或密码错误", "提示")
+      } else {
+        this.$router.push({path:"/mine"})
+      }
+    }
   }
-}
+};
 </script>

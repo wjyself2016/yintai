@@ -1,16 +1,16 @@
 <template lang="html">
   <div class="loginbyhu">
-    <form class="huform" action="/api/loginbyacc" method="post">
+    <form class="huform" method="post">
       <div class="phonenum-box">
         <img src="https://h5.yintai.com/m/images/ueser-img-75da284743.png" alt="">
-        <input type="text" name="phonenum" value="" placeholder="请输入手机号/邮箱">
+        <input type="text" name="phonenum" value="" placeholder="请输入手机号/邮箱" v-model="phonenum">
       </div>
       <div class="password-box">
         <img src="https://h5.yintai.com/m/images/pass-img-c8ba68915f.png" alt="">
-        <input type="password" name="password" value="" placeholder="请输入密码">
+        <input type="password" name="password" value="" placeholder="请输入密码" v-model="password">
       </div>
       <div class="loginbtn-box">
-        <input type="submit" name="" value="登录">
+        <input type="button" name="" value="登录" @click="toLogin()">
       </div>
     </form>
     <div class="findpwd-reg">
@@ -23,10 +23,13 @@
 </template>
 <script>
 import {Indicator} from 'mint-ui'
+import axiosUtil from '../../utils/axios.util.js'
+import MessageBox from "../../components/MessageBox"
 export default{
   data(){
     return {
-
+      phonenum:'',
+      password:''
     }
   },
   beforemount(){
@@ -37,6 +40,21 @@ export default{
   },
   mounted() {
     Indicator.close()
+  },
+  methods:{
+    toLogin(){
+      axiosUtil.login(this.phonenum,this.password,'/api/loginbyacc', this)
+    }
+  },
+  watch: {
+    loginstatus(val) {
+      console.log(val)
+      if (val === 0) {
+        MessageBox.alert("用户名或密码错误", "提示")
+      } else {
+        this.$router.push({path:"/mine"})
+      }
+    }
   }
 }
 </script>

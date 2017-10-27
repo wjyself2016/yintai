@@ -1,13 +1,9 @@
 .m-forgetpass {
   width: 100%;
-  header {
-    background: #fff;
-    color: #000;
-    @include border(0 0 1px 0,#ccc);
-  }
   .warm-tips{
     padding:12px;
     color:#666;
+    @include border(1px 0 0 0,#ccc);
   }
   .reset-form{
     width: 100%;
@@ -37,6 +33,9 @@
         outline: none;
         @include border-radius(5px);
         color: #fff;
+      }
+      .active{
+        background:#e8004c;
       }
     }
   }

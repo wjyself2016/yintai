@@ -1,16 +1,16 @@
 <template lang="html">
 	<div class="m-mine">
-		<getbacknav></getbacknav>
+		<Getbacknav></Getbacknav>
 		<div class="yt-user-info">
 			<div class="yt-user-img">
 				<!-- <img src="https://h5.yintai.com/m/images/user-head-72656860b5.png" alt=""> -->
 				<img src="../../assets/images/user-head.png" alt="">
 			</div>
 			<div class="yt-user-name">
-				{{username}}
+				{{user.username}}
 			</div>
 			<p class="yt-user-level">
-				{{userlevel}}
+				{{user.levelname}}
 			</p>
 		</div>
 		<div class="yt-user-order">
@@ -44,7 +44,7 @@
 					<span>银元</span>
 				</li>
 				<li>
-					<span>0.00</span>
+					<span>{{user.costmoney + '.00'}}</span>
 					<span>余额</span>
 				</li>
 			</ul>
@@ -118,50 +118,61 @@
 			<mt-cell title="下载银泰网客户端" to="" is-link value=""></mt-cell>
 		</div>
 		<div class="yt-user-logout">
-			<div class="yt-user-logoutbtn">
+			<router-link to="" tag="div" class="yt-user-logoutbtn" @click.native="logout">
 				退出登录
-			</div>
+			</router-link>
 		</div>
+		<div class="mint-indicator" style="display: none;"></div>
 	</div>
 </template>
 
 <script>
-import Getbacknav from '../../components/getbacknav.vue';
-import TableBar from '../../components/tablebar.vue'
+import Getbacknav from "../../components/getbacknav.vue";
+import TableBar from "../../components/tablebar.vue";
 
-import '../../assets/images/user-center-img.png'
-import '../../assets/images/user-center-img-1.png'
-import '../../assets/images/user-center-img-2.png'
-import '../../assets/images/user-center-img-4.png'
-import '../../assets/images/user-head.png'
+import { Indicator } from "mint-ui";
+import "../../assets/images/user-center-img.png";
+import "../../assets/images/user-center-img-1.png";
+import "../../assets/images/user-center-img-2.png";
+import "../../assets/images/user-center-img-4.png";
+import "../../assets/images/user-head.png";
 
-import '../../assets/iconfont/mine.ttf'
-import '../../assets/iconfont/mine.woff'
+import "../../assets/iconfont/mine.ttf";
+import "../../assets/iconfont/mine.woff";
 
-import Vue from 'vue'
-import {
-  Cell
-} from 'mint-ui';
-
+import Vue from "vue";
+import { Cell } from "mint-ui";
+import vm from '../../main.js'
 Vue.component(Cell.name, Cell);
 
 export default {
-	data() {
+  data() {
     return {
-      title: '我的银泰',
-      username: 'Artorias',
-      userlevel: '普卡会员'
-    }
+      title: "我的银泰",
+      username: "",
+      userlevel: "",
+      user: this.$store.state.user,
+      levelname: ""
+    };
   },
   methods: {
-
+    logout() {
+      this.$store.commit("setUserInfo", "");
+      this.$router.push("/login");
+    }
   },
   components: {
     Getbacknav,
-		TableBar
+    TableBar
   },
   created() {
-    this.$store.commit('navName', '我的银泰');
-  }
-}
+    if (!vm.$store.getters.isUserLogined) {
+      this.$router.push({
+        path: "/loginbyhu"
+      });
+    }
+    this.$store.commit("navName", "我的银泰");
+  },
+  mounted() {}
+};
 </script>

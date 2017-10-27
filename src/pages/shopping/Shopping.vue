@@ -1,7 +1,7 @@
 <template lang="html">
 	<div class="m-shopping">
-		<shopping-head :isEmpty="isEmpty"></shopping-head>
-		<shopping-section :isEmpty="isEmpty"></shopping-section>
+		<shopping-head></shopping-head>
+		<shopping-section></shopping-section>
 	</div>
 </template>
 
@@ -11,7 +11,7 @@
 	export default {
 		data() {
 			return {
-				isEmpty:''
+				
 			}
 		},
 		methods: {
@@ -23,12 +23,7 @@
   		},
   		created(){
   			this.$store.commit('navName','购物车');
-  			this.isEmpty = false;
-  			if(this.$store.state.cart.added.length == 0){
-  				this.isEmpty = true
-  			}
   		}
-  		
 		
 	}
 </script>

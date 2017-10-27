@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="yt-field">
-    <input :id="id" :type="type" :name="name" :value="value" :placeholder="placeholder">
+    <input :id="id" :type="type" :name="name" :value="value" :placeholder="placeholder" v-model="inputValue">
     <div class="slot-ele">
       <slot></slot>
     </div>
@@ -9,10 +9,15 @@
 
 <script>
 export default {
-  props: ['id','type', 'name', 'value', 'placeholder'],
+  props: ['id','type', 'name', 'value', 'placeholder','model'],
   data() {
     return {
-      name: 'yt-field'
+      inputValue:'',
+    }
+  },
+  watch:{
+    inputValue(val){
+      this.model(this.name,val)
     }
   }
 }

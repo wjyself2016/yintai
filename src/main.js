@@ -11,9 +11,9 @@ import router from './router/';
 import 'mint-ui/lib/style.css';
 
 
-new Vue({
+var vm = new Vue({
   el: '#app',
   router,
   store
 })
-
+export default vm
