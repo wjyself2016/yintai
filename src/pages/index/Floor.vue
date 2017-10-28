@@ -33,7 +33,7 @@
 			axios.get('/Services/Proxy.ashx?r=201710241515&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1')
 			.then((res)=>{
 				const da=res.data.data.templatelist;
-				const data=da.slice(6);
+				const data=da.slice(6,48);
 				this.dataList=data;
 				this.isShowloading=false;
 			})

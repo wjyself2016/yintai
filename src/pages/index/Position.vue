@@ -9,11 +9,18 @@
 		</div>
 		<div class="nav-list">
 			<ul>
-				<template tag="li" v-for="(list,i) in funcList" >
-					<li v-for="(item,i) in list.items" :key="i">
-						<img :src="item.imgurl"/>
-						<p>{{item.imgname}}</p>
+				<template v-for="(list,i) in funcList" >
+					<li @click.native="chooseId(j,cutpageid(item.jumpurl))"   v-for="(item,j) in list.items" :key="i">
+						<router-link :to="{name:'classdetail',query:{jumpurl:cutpageid(item.jumpurl)}}" v-if="j!=4">
+							<img :src="item.imgurl"/>
+							<p>{{item.imgname}}</p>
+					    </router-link>
+					    <router-link :to="{name:'salelife',query:{jumpurl:cutpageid(item.jumpurl)}}" v-else>
+							<img :src="item.imgurl"/>
+							<p>{{item.imgname}}</p>
+					    </router-link>
 					</li>
+					
 				</template>
 			</ul>
 		</div>
@@ -24,24 +31,7 @@
 		<div class="loading">
 			<mt-spinner type="triple-bounce" color="#e5004f" :size="35" v-if="isShowloading"></mt-spinner>
 		</div>
-		<div class="pro-list">
-			<ul class="inlist">
-				<li v-for="(list,i) in snapList" :key="i">
-					<router-link :to="{name:'goodsdetail',query:{itemCode:item.itemid}}" tag="dl" v-for="(item,i) in list.items" :key="i">
-						<dt>
-							<img :src="item.imgurl"/>
-						</dt>
-						<dd>
-							<p>{{item.extra.productdetail.name}}</p>
-							<span>{{"￥"+item.extra.productdetail.price}}</span>
-						</dd>
-						<template  v-for="(list,i) in item.extra.productdetail.prmotionlist" >
-						    <div class="pro-prom">{{list.plabel}}</div>
-				 		</template>
-					</router-link>
-			   </li>
-			</ul>
-		</div>
+		<NewProduct :snap-list="snapList"></NewProduct>
 		<div class="message">
 			<div class="anno" @click="">
 				2017年10月北京地区发货通知
@@ -50,8 +40,9 @@
 		<div class="floor">
 			<Floor></Floor>
 		</div>
-		<div class="product">
-			<Product></Product>
+		<div >
+			<Product :data-list="getdatalist()"></Product>
+			<!--<Product></Product>-->
 		</div>
 	</div>
 </template>
@@ -59,8 +50,10 @@
 <script>
 import Product from './Product.vue';
 import Floor from './Floor.vue';
+import NewProduct from './NewProduct.vue';
 import axios from 'axios'
 import Vue from 'vue'
+import axiosUtil from '../../utils/axios.util.js'
 
 import {Spinner, Swipe, SwipeItem } from 'mint-ui';
 Vue.component(Swipe.name, Swipe);
@@ -68,24 +61,40 @@ Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Spinner.name, Spinner);
 
 export default {
-  //props:["id",'onButtonInfo'],
-  data(){
-  	return {
-  		snapList:[],
-  		swipeList:[],
-  		funcList:[],
-  		isShowloading:true,
-  		//cityName:this.$route.push.cityName||'全国'
-  	}
-  },
+	props:["id",'onButtonInfo'],
+	data(){
+	  	return {
+	  		snapList:[],
+	  		swipeList:[],
+	  		dataList:[],
+	  		funcList:[],
+	  		jumpurl:'',
+	  		isShowloading:true
+	  	}
+	},
   methods:{
   	showCityList() {
   		this.$router.push('/city');
-  	}
+  	},
+  	cutpageid(url){//截取pageid
+  		const value = url.replace(/[^0-9]/ig,''); 
+  		const jumpurl=value.slice(8,16);
+  		return jumpurl;
+  	},
+  	getdatalist(){
+		const data=this.dataList.slice(9,17);
+		return data;
+	},
+	chooseId(index,pageid){
+		if(index==4){
+			this.$router.push({ name: 'salelife', query: { jumpurl: pageid }});
+		}
+	}
   },
   components: {
     Product,
-    Floor
+    Floor,
+    NewProduct
   },
   mounted(){
 	axios.get('/Services/Proxy.ashx?r=201710230824&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1')
@@ -97,11 +106,17 @@ export default {
 			this.funcList=funcdata;
 			this.isShowloading=false;
 	});
+	
    	axios.get('/Services/Proxy.ashx?r=201710231422&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1')
 		.then((res)=>{
 			const da=res.data.data.bannerlist;
 			this.swipeList=da;
-		})
-   }
+	});
+	axiosUtil.getClassDetail(this,'/Services/Proxy.ashx?r=201710222127&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=2');
+	
+/*	axiosUtil.getClassDetail(this,'/Services/Proxy.ashx?r=201710230824&os=HTML5&client_v=1.0.0&pageid=104001&previewtime=0&methodName=products.template.getpage_1.0.0&method=products.template.getpage&apptype=10&ver=1.0.0&pageindex=1');
+*/	
+  }
+  
 }
 </script>

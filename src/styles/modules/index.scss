@@ -4,6 +4,7 @@
     height: 100%;
     @include flexbox();
     @include flex-direction(column);
+    @include align-items(center);
     header {
         height: .55rem;
         background: #fff;
@@ -62,6 +63,8 @@
         @include flex();
         height:100%;
         width: 100%;
+        min-width:320px;
+        max-width:640px;
         overflow-y: scroll;
     }
     footer {

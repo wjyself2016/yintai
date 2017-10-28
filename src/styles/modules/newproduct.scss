@@ -1,0 +1,48 @@
+.pro-list{
+    background: #fff;
+    width:100%;
+    overflow-x: scroll;
+    @include flexbox();
+    padding:5px 3px;
+    //@include justify-content(center);
+    
+    .inlist{
+        @include flexbox();
+        @include justify-content(flex-start);
+       // width:7.8rem;
+      
+       li{
+           @include flexbox();
+          
+       }
+        dl{
+            width:.88rem;
+            position:relative;
+            padding:0 2px 0 0;
+            dt{
+                @include border(0.5px,#ccc,solid); 
+                img{
+                    width:100%;
+                }
+            }
+            dd{
+                p{
+                    @include ellipsis(.86rem,2);
+                }
+                span{
+                    color:$base_color;
+                    font-weight: 600;
+                }
+            }
+        }
+        .pro-prom{
+            background:#ff3b7f;
+            padding:4px 8px;
+            position:absolute;
+            top:-1px;
+            left:-1px;
+            color:#fff;
+            font-size:.12rem;
+        }
+    }
+}

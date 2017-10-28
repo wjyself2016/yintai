@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import Container from '../pages/Container.vue'
 import Index from '../pages/index/Index.vue'
+import ClassDetail from '../pages/index/ClassDetail.vue'
+import SaleLife from '../pages/index/SaleLife.vue'
 import Classify from '../pages/classify/Classify.vue'
 import Hot from '../pages/hot/Hot.vue'
 import Mine from '../pages/mine/Mine.vue'
@@ -37,6 +39,16 @@ export default new Router({
         path: '/mine',
         component: Mine,
         name: 'mine'
+      },
+      {
+        path: '/classdetail',
+        component: ClassDetail,
+        name: 'classdetail'
+      },
+      {
+      	path:'/salelife',
+      	component: SaleLife,
+        name: 'salelife'
       }
     ]
   }, 
