@@ -82,6 +82,13 @@
           </li>
           <li>
             <h2 class="yt-desc-title">
+              <span class="yt-zh-title">商品图片</span>
+              <span class="yt-en-title">Pictures of Goods</span>
+            </h2>
+            <img :src="imgurl" alt="" v-for="imgurl in imgList"/>
+          </li>
+          <li>
+            <h2 class="yt-desc-title">
               <span class="yt-zh-title">价格说明</span>
               <span class="yt-en-title">Price Description</span>
             </h2>
@@ -150,6 +157,7 @@ import '../../assets/images/miao-cat-max.png'
 import '../../assets/images/bai-08.png'
 import '../../assets/images/p-long.gif'
 
+import MessageBox from '../../components/MessageBox'
 import axiosUtil from '../../utils/axios.util.js'
 import Getbacknav from '../../components/getbacknav.vue';
 import commonFooter from '../hot/common-footer.vue'
@@ -215,6 +223,7 @@ export default {
         imgurl:this.imgList[0]
       }
       this.$store.commit('setGoodsInCart',goodsInCart)
+      MessageBox.alert('添加购物车成功','提示')
       console.log(this.$store.state.goodsList)
     },
     addGoodsNum(){

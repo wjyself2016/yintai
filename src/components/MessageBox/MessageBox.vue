@@ -1,22 +1,24 @@
 <template lang="html">
-  <div class="yt-msgbox" v-if="isShowMessageBox">
-    <div class="yt-msgbox-tle">
-      {{title}}
-    </div>
-    <div class="yt-msgbox-msg">
-      <p>{{message}}</p>
-    </div>
-    <div class="yt-msgbox-btn" v-if="type === 'confirm'">
-      <div @click="closeMessageBox" class="yt-msgbox-cbtn">
-        {{cancelButtonText}}
+  <div class="yt-hover" v-if="isShowMessageBox">
+    <div class="yt-msgbox">
+      <div class="yt-msgbox-tle">
+        {{title}}
       </div>
-      <div @click="" class="yt-msgbox-sbtn">
-        {{confirmButtonText}}
+      <div class="yt-msgbox-msg">
+        <p>{{message}}</p>
       </div>
-    </div>
-    <div class="yt-msgbox-btn" v-if="type === 'alert'">
-      <div @click="closeMessageBox" class="yt-msgbox-sbtn">
-        {{confirmButtonText}}
+      <div class="yt-msgbox-btn" v-if="type === 'confirm'">
+        <div @click="closeMessageBox" class="yt-msgbox-cbtn">
+          {{cancelButtonText}}
+        </div>
+        <div @click="" class="yt-msgbox-sbtn">
+          {{confirmButtonText}}
+        </div>
+      </div>
+      <div class="yt-msgbox-btn" v-if="type === 'alert'">
+        <div @click="closeMessageBox" class="yt-msgbox-sbtn">
+          {{confirmButtonText}}
+        </div>
       </div>
     </div>
   </div>
@@ -46,6 +48,14 @@ export default {
 </script>
 
 <style lang="scss">
+.yt-hover{
+  width: 100%;
+  height: 100%;
+  background: rgba(200,200,200,0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 .yt-msgbox {
     position: fixed;
     top: 50%;
@@ -57,6 +67,7 @@ export default {
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    border: 1px solid #ccc;
     .yt-msgbox-tle {
         padding: 0.15rem 0.15rem 0;
         font-size: 0.2rem;
