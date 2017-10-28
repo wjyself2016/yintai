@@ -23,4 +23,3 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 =======
 # yintai
 a mobileProject by vue
->>>>>>> 13302e259abaaaaf187f99cbf0222cac5f4ed741
