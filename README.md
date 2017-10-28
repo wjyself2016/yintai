@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # yintaipro
 
 > A Vue.js project
