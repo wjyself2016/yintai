@@ -21,9 +21,11 @@ const store = new Vuex.Store({
       if(goods === undefined){
         state.goodsList.push(payload)
       }else{
-        goods.goodsnum += payload.goodsnum
-        goods.color = payload.color
-        goods.size = payload.size
+        if(goods.color !== payload.color || goods.size !== payload.size){
+          state.goodsList.push(payload)
+        }else{
+          goods.goodsnum += payload.goodsnum
+        }
       }
     }
   },

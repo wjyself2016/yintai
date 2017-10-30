@@ -83,7 +83,7 @@ const router = new Router({
     }
   ]
 })
-// //  判断是否需要登录权限 以及是否登录
+// //  判断是否需要登录权限 以及是否登录--路由守卫
 // router.beforeEach((to, from, next) => {
 //   if (to.matched.some(res => res.meta.requireAuth)) { // 判断是否需要登录权限
 //     if (vm.$store.getters.isUserLogined) { // 判断是否登录

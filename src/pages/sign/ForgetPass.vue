@@ -115,7 +115,7 @@ export default {
         if (val === 0) {
           MessageBox.alert("重置密码失败", "提示");
         } else {
-          this.$router.push({ path: "/mine" });
+          this.$router.push({ path: "/login" });
         }
       }
     }

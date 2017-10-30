@@ -55,8 +55,10 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 9998;
 }
 .yt-msgbox {
+    z-index: 9999;
     position: fixed;
     top: 50%;
     left: 50%;
